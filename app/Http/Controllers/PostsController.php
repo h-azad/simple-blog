@@ -10,10 +10,10 @@ class PostsController extends Controller
     public function get_post($id)
     {
       try {
-        $post = Post::findOrFail($id);
+        $post = Post::published()->findOrFail($id);
         $post->views += 1;
         $post->save();
-        
+
         return view('pages.post-details',compact('post'));
 
       } catch (\Exception $e) {

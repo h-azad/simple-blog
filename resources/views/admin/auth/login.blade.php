@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <form method="post" action="{{ route('admin.login') }}" autocomplete="on">
+    <form method="post" action="{{ route('admin.login') }}" autocomplete="off">
       {{ csrf_field() }}
       <div class="hand"></div>
       <div class="hand rgt"></div>
@@ -41,15 +41,12 @@
       <div class="form-group">
         <input name="password" id="password" type="password" required="required" class="form-control"/>
         <label class="form-label">Password</label>
-        @if(isset($errors))
-        <p class="alert">Invalid Credential..!!</p>
-        @else
-        <p class="alert">Processing..!!</p>
+        @if(Session::has('error'))
+        <p class="alert">{{ Session::get('error') }}</p>
         @endif
         <button type="submit" class="btn">Login </button>
       </div>
     </form>
-{{ dd($errors)}}
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="{{ asset('admin-assets/js/login.js') }}"></script>
     @if(isset($errors))

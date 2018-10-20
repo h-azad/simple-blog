@@ -10,4 +10,8 @@ class Post extends Model
       'title', 'subtitle', 'image', 'description', 'status'
   ];
 
+  public function scopePublished($query)
+  {
+      return $query->where('status', 1);
+  }
 }

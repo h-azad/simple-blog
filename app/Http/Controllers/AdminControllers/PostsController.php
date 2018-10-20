@@ -130,8 +130,12 @@ class PostsController extends Controller
 
   public static function latest_post()
   {
-    $latest = Post::orderBy('created_at', 'desc')->first();
+    try {
+      $latest = Post::orderBy('created_at', 'desc')->first();
 
-    return date('d/m/y', strtotime($latest->created_at));
+      return date('d/m/y', strtotime($latest->created_at));
+    } catch (\Exception $e) {
+      
+    }
   }
 }
