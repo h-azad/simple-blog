@@ -26,3 +26,11 @@ A Simple Blog built on **Laravel Framework 5.4**
 -   Run `php artisan storage:link` in your terminal
 -   Run `php artisan serve` to serve with address `http://localhost:8000/`
 -   Open in your browser with address `http://localhost:8000/`
+
+
+# ToDo
+
+-   Add Admin Role Using [spatie/laravel-permission](https://github.com/spatie/laravel-permission) - This package allows to manage user permissions and roles in a database.
+-   Manage Roles From Admin Panel.
+-   Email Verification For Users.
+-   Set Verification Email Template From Admin Panel.
